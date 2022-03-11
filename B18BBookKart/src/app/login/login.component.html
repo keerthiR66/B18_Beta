@@ -1,0 +1,36 @@
+<div class="container">
+      <div class="row">
+      <div class="col-1"></div>
+      <div class="col-13">
+        <div class="row header">
+            <div class="col-6"><h2>Login</h2></div>
+            <div class="col-6 docs-example-viewer-title">
+              <strong>New User?</strong>
+            <button style="margin-left: 10px;" class="btn btn-primary"(click)="register()">Register</button>
+            </div>
+            </div>
+          </div>
+    
+        <div class="card">
+        <form [formGroup]="login" (ngSubmit)="onSubmitForm(login.value)">
+            <div class="form-group">
+              <label class="col-form-label">Username</label>
+              <input class="form-control" type="username" required="" placeholder="Enter Username" formControlName="username" required>
+            </div>
+  
+            <div class="form-group">
+              <label class="col-form-label">Password</label>
+              <input class="form-control" type="password" [type]="hide ? 'password':'true'" name="password" required="" placeholder="Enter Password"  formControlName="password" required>
+              <i class="material-icons" matSuffix (click)="hide=!hide">{{hide ? 'visibility':'visibility_off'}}</i>
+              </div>
+            <br>
+            <div class="form-group mb-0">
+              <button [disabled]= "!login.valid" type="login" class="btn btn-primary">LOGIN</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-3"></div>
+  
+      </div>
+    
+  </div>
