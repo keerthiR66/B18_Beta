@@ -1,0 +1,23 @@
+
+<div>
+    <h3 style="text-align: center; padding-top: 5%;"></h3>
+</div>
+<div class="header">
+    <div class="topleft" style="float: left;font-size: 16px; margin-top: 4px; margin-left: 200px;" *ngIf="!user">
+      <div class="login">
+        <button type="button" class="btn btn-primary" routerLink="/login" routerLinkActive="active">LOGIN</button>
+      </div>
+    </div>
+    <div class="topright" style="float: right; margin-right: 200px;"*ngIf="user">
+        <div ngbDropdown class="dropdown">
+          <button ngbDropdownToggle class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" aria-expanded="false" >
+            {{user}}
+        </button>
+                  <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+            <li><a ngbDropdownItem href="/myOrders;" (click)="myOrders()">My Order</a></li>
+            <li><a ngbDropdownItem href="/login"(click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+</div>
+<router-outlet></router-outlet>
